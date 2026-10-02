@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --background: #050407;
+  --surface: #0b0712;
+  --surface-purple: #150a25;
+  --purple: #8b20f5;
+  --purple-bright: #9b36ff;
+  --purple-soft: #b59bff;
+  --text: #f8f7fb;
+  --muted: #b6a9d4;
+  --border: #493064;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(92, 25, 151, .10), transparent 48%),
+    var(--background);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: min(100% - 48px, 570px);
+  margin: 0 auto;
+  padding: 15px 0 38px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 39px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 63px;
+  height: 35px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #8d20f5, #7020df);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .4px;
+  text-decoration: none;
+}
+
+.brand p {
+  margin: 0;
+  color: #d0c6e7;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.intro .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  color: var(--purple-soft);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.eyebrow-dot,
+.status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--purple-bright);
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 3.35rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: .99;
+}
+
+.lead {
+  margin: 16px 0 29px;
+  color: var(--purple-soft);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.stopwatch {
+  padding: 25px 22px 22px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: linear-gradient(145deg, rgba(21, 10, 37, .92), rgba(9, 6, 17, .96));
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .22), inset 0 1px 0 rgba(255,255,255,.025);
+  text-align: center;
+}
+
+.timer-label {
+  margin: 0 0 9px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  font-size: clamp(3.5rem, 13vw, 5.5rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -3px;
+  line-height: 1.08;
+}
+
+.timer .separator {
+  padding: 0 3px;
+  color: var(--purple-bright);
+  font-weight: 500;
+  transform: translateY(-3px);
+}
+
+.timer-hint {
+  margin: 7px 0 23px;
+  color: #88799f;
+  font-size: 10px;
+  letter-spacing: .35px;
+}
+
+.timer-hint span {
+  padding: 0 7px;
+  color: var(--purple-bright);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:focus-visible {
+  outline: 2px solid #d0adff;
+  outline-offset: 3px;
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #9228f5, #7620d8);
+  color: #fff;
+  box-shadow: 0 5px 18px rgba(139, 32, 245, .2);
+}
+
+.button-primary:hover {
+  background: linear-gradient(135deg, #a13fff, #8428e8);
+}
+
+.button-secondary {
+  border-color: #68418b;
+  background: #21112f;
+  color: #d9c7f5;
+}
+
+.button-secondary:hover {
+  border-color: var(--purple-bright);
+  background: #2b1640;
+}
+
+.button-ghost {
+  border-color: #3b2b4c;
+  background: transparent;
+  color: #b7a8ce;
+}
+
+.button-ghost:hover {
+  border-color: #76509a;
+  background: rgba(139, 32, 245, .08);
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid currentColor;
+}
+
+.pause-icon {
+  width: 9px;
+  height: 11px;
+  border-right: 3px solid currentColor;
+  border-left: 3px solid currentColor;
+}
+
+.reset-icon {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 0 31px 3px;
+  color: var(--purple-soft);
+  font-size: 11px;
+}
+
+.tip-card {
+  min-height: 119px;
+  padding: 19px 21px;
+  border: 1.5px solid var(--purple-bright);
+  border-radius: 16px;
+  background: rgba(10, 6, 17, .5);
+  box-shadow: 0 0 0 1px rgba(139, 32, 245, .08);
+}
+
+.tip-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+}
+
+.step-number {
+  color: var(--purple-bright);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tip-heading h2 {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.45px;
+}
+
+.tip-card p {
+  margin: 7px 0 0;
+  color: var(--purple-soft);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.tip-card strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 34px;
+  color: var(--purple-soft);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.footer p {
+  margin: 0;
+}
+
+@media (max-width: 520px) {
+  .page {
+    width: min(100% - 36px, 570px);
+    padding-top: 18px;
+  }
+
+  .brand {
+    margin-bottom: 39px;
+  }
+
+  .intro h1 {
+    font-size: clamp(2.35rem, 10vw, 3rem);
+    letter-spacing: -1.5px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .lead {
+    font-size: 16px;
+    margin-top: 14px;
+    margin-bottom: 25px;
+  }
+
+  .stopwatch {
+    padding: 23px 13px 19px;
+  }
+
+  .timer {
+    letter-spacing: -2px;
+  }
+
+  .button {
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  .tip-card {
+    padding: 18px 16px;
+  }
+
+  .tip-heading h2 {
+    font-size: 17px;
+  }
+}

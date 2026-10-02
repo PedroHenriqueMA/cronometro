@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cronômetro interativo para uma atividade prática de DOM.">
+  <title>Cronômetro | LAWD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="brand">
+      <a class="brand-mark" href="#" aria-label="LAWD">LAWD</a>
+      <p>Liga Acadêmica de<br>Desenvolvimento Web</p>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> atividade prática · DOM</p>
+      <h1 id="page-title">Cada segundo<br class="desktop-break"> conta.</h1>
+      <p class="lead">
+        Um cronômetro simples para colocar<br class="desktop-break">
+        o JavaScript em movimento.
+      </p>
+    </section>
+
+    <section class="stopwatch" aria-label="Cronômetro">
+      <p class="timer-label">TEMPO DECORRIDO</p>
+      <div class="timer" role="timer" aria-live="off">
+        <span id="hours">00</span><span class="separator">:</span><span id="minutes">00</span><span class="separator">:</span><span id="seconds">00</span>
+      </div>
+      <p class="timer-hint">horas <span>·</span> minutos <span>·</span> segundos</p>
+
+      <div class="controls" aria-label="Controles do cronômetro">
+        <button class="button button-primary" id="start" type="button">
+          <span class="play-icon" aria-hidden="true"></span>
+          Começar
+        </button>
+        <button class="button button-secondary" id="stop" type="button">
+          <span class="pause-icon" aria-hidden="true"></span>
+          Parar
+        </button>
+        <button class="button button-ghost" id="reset" type="button">
+          <span class="reset-icon" aria-hidden="true">↺</span>
+          Resetar
+        </button>
+      </div>
+    </section>
+
+    <p class="status"><span class="status-dot" aria-hidden="true"></span> pronto para começar</p>
+
+    <section class="tip-card" aria-labelledby="tip-title">
+      <div class="tip-heading">
+        <span class="step-number">01</span>
+        <h2 id="tip-title">Seu desafio</h2>
+      </div>
+      <p>
+        Faça o tempo correr ao clicar em <strong>Começar</strong>. Pause quando quiser
+        e use <strong>Resetar</strong> para voltar ao início.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>Uma página, três botões e algumas linhas de JavaScript.</p>
+      <p>Material de estudo da LAWD · UFS</p>
+    </footer>
+  </main>
+</body>
+<script src="main.js"></script>
+</html>
